@@ -33,8 +33,12 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsernameInBackground(self.usernameTextField.text!, password:self.passwordTextField.text!) {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil {
-                // Do stuff after successful login.
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewControllerWithIdentifier("notifyViewController")
+                self.navigationController?.pushViewController(viewController, animated:true)
+
                 print("login success")
+                
             } else {
                 // The login failed. Check error to see why.
                 print("login failure")

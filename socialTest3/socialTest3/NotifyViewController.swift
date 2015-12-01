@@ -13,11 +13,14 @@ class NotifyViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var notifyButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = PFUser.currentUser()?.username
+        self.navigationItem.backBarButtonItem = nil
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,16 +28,14 @@ class NotifyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var notifyButtonDidPress: UIButton!
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func notifyButtonDidPress(sender: AnyObject) {
     }
-    */
+    
+    @IBAction func logoutButtonDidPress(sender: AnyObject) {
+        PFUser.logOut()
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController = storyboard.instantiateViewControllerWithIdentifier("homeViewController")
+//        self.navigationController.popToViewController(viewController, animated: true)
+    }
 
 }
