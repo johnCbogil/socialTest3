@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class NotifyViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!

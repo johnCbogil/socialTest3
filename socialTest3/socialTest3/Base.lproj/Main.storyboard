@@ -98,6 +98,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7s-CP-XYs">
                                 <rect key="frame" x="273" y="206" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButtonDidPress:" destination="zVR-zj-VHJ" eventType="touchUpInside" id="Eyz-hr-yVw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,7 +122,6 @@
                         <outlet property="passwordLabel" destination="Z4K-tf-BeS" id="2yc-pj-Ip3"/>
                         <outlet property="passwordTextField" destination="kOA-EO-Iwc" id="bV0-dL-7OG"/>
                         <outlet property="signUpButton" destination="e7s-CP-XYs" id="cT2-Kj-kpp"/>
-                        <outlet property="signUpButtonDidPress" destination="e7s-CP-XYs" id="Sbh-FZ-7kM"/>
                         <outlet property="usernameLabel" destination="gKO-Vo-dHl" id="RBA-kZ-Dy4"/>
                         <outlet property="usernameTextField" destination="WBT-Z2-n0Z" id="fH6-Fm-bO0"/>
                     </connections>
@@ -174,6 +176,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXs-su-Egq">
                                 <rect key="frame" x="282" y="206" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonDidPress:" destination="Txy-mM-9fD" eventType="touchUpInside" id="nwr-NV-Lhx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -192,8 +197,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="loginButton" destination="CXs-su-Egq" id="Ey3-Pk-Xqw"/>
-                        <outlet property="loginButtonDidPress" destination="CXs-su-Egq" id="Xqo-xF-GZa"/>
+                        <outlet property="loginButton" destination="CXs-su-Egq" id="E8C-rg-Mfe"/>
                         <outlet property="passwordLabel" destination="iTr-N0-VwT" id="T05-XL-eoJ"/>
                         <outlet property="passwordTextField" destination="3SU-gg-fC5" id="Zp9-Tx-w9O"/>
                         <outlet property="usernameLabel" destination="RRZ-ij-5AI" id="ZbM-hY-net"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
@@ -18,7 +19,19 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // "let" is immutable 
+        let user = PFUser()
+        user.username = self.usernameTextField.text
+        user.password = self.passwordTextField.text
+        user.signUpInBackgroundWithBlock { (BOOL success, NSError error) -> Void in
+            if error == nil {
+                // Hooray! Let them use the app now.
+                print("Sign Up Sucess")
+            }
+            else {
+                print("Sign Up Failure")
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,16 +39,6 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var signUpButtonDidPress: UIButton!
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func signUpButtonDidPress(sender: AnyObject) {
     }
-    */
-
 }
