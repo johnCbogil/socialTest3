@@ -33,9 +33,6 @@ class NotifyViewController: UIViewController {
     
     @IBAction func logoutButtonDidPress(sender: AnyObject) {
         PFUser.logOut()
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateViewControllerWithIdentifier("homeViewController")
-//        self.navigationController.popToViewController(viewController, animated: true)
     }
 
 }
