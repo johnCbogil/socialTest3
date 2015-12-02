@@ -19,7 +19,7 @@ class NotifyViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = PFUser.currentUser()?.username
-        self.navigationItem.backBarButtonItem = nil
+        self.navigationItem.setHidesBackButton(true, animated: false)
 
     }
 

@@ -36,7 +36,6 @@ class LoginViewController: UIViewController {
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewControllerWithIdentifier("notifyViewController")
                 self.navigationController?.pushViewController(viewController, animated:true)
-
                 print("login success")
                 
             } else {
