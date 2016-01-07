@@ -20,6 +20,13 @@ class NotifyViewController: UIViewController {
 
         self.title = PFUser.currentUser()?.username
         self.navigationItem.setHidesBackButton(true, animated: false)
+        
+//        PFInstallation *installation = [PFInstallation currentInstallation];
+        let installation = PFInstallation.currentInstallation()
+//        installation[@"User"] = [PFUser currentUser].username;
+        installation["User"] = PFUser.currentUser()?.username
+//        [installation saveInBackground];
+        installation.saveInBackground()
 
     }
 
@@ -29,6 +36,22 @@ class NotifyViewController: UIViewController {
     }
     
     @IBAction func notifyButtonDidPress(sender: AnyObject) {
+        
+//        // Create our Installation query
+//        PFQuery *pushQuery = [PFInstallation query];
+        let pushQuery = PFInstallation.query()
+//        [pushQuery whereKey:@"User" equalTo:self.usernameTextField.text];
+        pushQuery?.whereKey("User", equalTo: self.usernameTextField.text!)
+//        
+//        // Send push notification to query
+//        PFPush *push = [[PFPush alloc] init];
+        let push = PFPush.init()
+//        [push setQuery:pushQuery]; // Set our Installation query
+        push.setQuery(pushQuery)
+//        [push setMessage:@"🙏"];
+        push.setMessage("🙏")
+//        [push sendPushInBackground];
+        push.sendPushInBackground()
     }
     
     @IBAction func logoutButtonDidPress(sender: AnyObject) {
